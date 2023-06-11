@@ -1,0 +1,36 @@
+{
+    "name": "drewlabs/envoyer-sendgrid",
+    "description": "Sendgrid driver for envoyer client library",
+    "type": "library",
+    "keywords": [
+        "envoyer",
+        "sendgrid"
+    ],
+    "require": {
+        "drewlabs/envoyer-contracts": "^0.2.0",
+        "psr/http-message": "^2.0",
+        "sendgrid/sendgrid": "^7.0|^8.0"
+    },
+    "require-dev": {
+        "drewlabs/envoyer": "^0.2.2",
+        "phpunit/phpunit": ">=6.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Drewlabs\\Envoyer\\Drivers\\Sendgrid\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "azandrew-sidoine",
+            "email": "asmyns.platonnas29@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

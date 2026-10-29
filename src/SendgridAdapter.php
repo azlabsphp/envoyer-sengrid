@@ -51,23 +51,19 @@ class SendgridAdapter implements ClientInterface
     public function sendRequest(NotificationInterface $instance): NotificationResult
     {
         try {
-            // Creates sendgrid mail instance
             $mail = new \SendGrid\Mail\Mail();
 
-            // Buil sendgrid mail
             $mail->setFrom($instance->getSender()->__toString(), $instance->getSender()->name());
             $mail->addTo($instance->getReceiver()->__toString(), $instance->getReceiver()->name());
-            // Add contents
+
             $mail->addContent('text/html', (string) $instance->getContent());
 
-            // Add subject
             if ($instance instanceof SubjectAware) {
                 $mail->setSubject($instance->getSubject());
             } else {
                 $mail->setSubject('No Subject.');
             }
 
-            // Add attached addresses
             if ($instance instanceof AttachedAddressesAware) {
                 $addresses = array_filter(
                     $instance->getAttachedAddresses(),
@@ -80,7 +76,6 @@ class SendgridAdapter implements ClientInterface
                 }
             }
 
-            // Add mail attachments
             if ($instance instanceof AttachmentsAware) {
                 foreach ($this->getAttachments($instance) as $attachment) {
                     $mail->addAttachment($attachment);

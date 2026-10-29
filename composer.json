@@ -8,12 +8,12 @@
     ],
     "require": {
         "php": ">=7.0",
-        "drewlabs/envoyer-contracts": "^0.2.0",
+        "drewlabs/envoyer-contracts": "^0.2.5",
         "psr/http-message": "^2.0",
         "sendgrid/sendgrid": "^7.0|^8.0"
     },
     "require-dev": {
-        "drewlabs/envoyer": "^0.2.2",
+        "drewlabs/envoyer": "^0.2.7",
         "phpunit/phpunit": ">=6.0"
     },
     "license": "MIT",
@@ -28,7 +28,7 @@
             "email": "asmyns.platonnas29@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
         "optimize-autoloader": true,
